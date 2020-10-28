@@ -7,6 +7,11 @@ const CharacterPage = () => {
 
   return (
     <>
+      <button
+        onClick={() => setPage(page => page - 1)}
+        disabled={page <= 1}
+      >Prev Page</button>
+      <button onClick={() => setPage(page => page + 1)}>Next Page</button>
       <CharacterList page={page} />
     </>
   );
