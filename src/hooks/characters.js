@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { ThemePickerContext } from '../context/ThemePickerContext';
 import { getCharacters } from '../services/hey-arnold-api';
 
 export const useCharacters = page => {
@@ -15,4 +16,9 @@ export const useCharacters = page => {
     loading,
     characters
   };
+};
+
+export const useColorToggle = () => {
+  const { toggle } = useContext(ThemePickerContext);
+  return toggle;
 };
